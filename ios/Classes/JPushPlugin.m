@@ -4,6 +4,7 @@
 #endif
 
 #import <JPush/JPUSHService.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 #define JPLog(fmt, ...) NSLog((@"| JPUSH | Flutter | iOS | " fmt), ##__VA_ARGS__)
 
@@ -535,14 +536,16 @@ didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSe
 
 
 - (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler  API_AVAILABLE(ios(10.0)){
+    // 屏蔽应用处于前台时，通知栏推送
+    // NSDictionary * userInfo = notification.request.content.userInfo;
+    // if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+    //     [JPUSHService handleRemoteNotification:userInfo];
+    //     [_channel invokeMethod:@"onReceiveNotification" arguments: [self jpushFormatAPNSDic:userInfo]];
+    // }
     
-    NSDictionary * userInfo = notification.request.content.userInfo;
-    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        [JPUSHService handleRemoteNotification:userInfo];
-        [_channel invokeMethod:@"onReceiveNotification" arguments: [self jpushFormatAPNSDic:userInfo]];
-    }
-    
-    completionHandler(notificationTypes);
+    // completionHandler(notificationTypes);
+    // 来消息后震动
+    // AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 }
 
 - (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler  API_AVAILABLE(ios(10.0)){
