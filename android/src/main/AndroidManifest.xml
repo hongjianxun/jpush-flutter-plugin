@@ -41,7 +41,7 @@
             android:name="cn.jpush.android.ui.PopWinActivity"
             android:theme="@style/MyDialogStyle"
             android:exported="false">
-        </activity> -->
+        </activity> --> 
 
         <!-- Required SDK核心功能-->
         <activity
