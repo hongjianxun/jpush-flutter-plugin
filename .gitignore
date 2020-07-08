@@ -145,3 +145,9 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
+android/.classpath
+android/.project
+android/.settings/org.eclipse.buildship.core.prefs
+android/.settings/org.eclipse.jdt.core.prefs
+android/.settings/org.eclipse.buildship.core.prefs
+android/.project
