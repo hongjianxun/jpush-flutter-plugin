@@ -39,10 +39,10 @@ android {
 }
 
 dependencies {
-    implementation 'cn.jiguang.sdk:jpush:3.5.4'
+    // implementation 'cn.jiguang.sdk:jpush:3.5.4'
     // implementation 'cn.jiguang.sdk:jcore:2.2.6'
 //    implementation 'com.android.support:appcompat-v7:28.+'
     compileOnly files('libs/flutter.jar')
-    compileOnly files('libs/jcore-android-2.2.6-google_play.jar')
-    // compileOnly files('libs/jpush-android-3.5.4-google_play.jar')
+    compile files('libs/jcore-android-2.2.6-google_play.jar')
+    compile files('libs/jpush-android-3.5.4-google_play.jar')
 }
