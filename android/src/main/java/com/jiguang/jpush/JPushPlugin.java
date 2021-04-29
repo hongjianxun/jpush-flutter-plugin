@@ -28,6 +28,8 @@ import java.util.Set;
 import cn.jpush.android.api.JPushInterface;
 import io.flutter.view.FlutterNativeView;
 
+import cn.jiguang.api.JCoreInterface;
+
 /** JPushPlugin */
 public class JPushPlugin implements MethodCallHandler {
 
@@ -142,7 +144,8 @@ public class JPushPlugin implements MethodCallHandler {
         JPushInterface.setDebugMode(debug);
 
         JPushInterface.init(registrar.context());     		// 初始化 JPush
-        
+        JCoreInterface.testCountryCode("us");
+
         String channel = (String)map.get("channel");
         JPushInterface.setChannel(registrar.context(), channel);
 
