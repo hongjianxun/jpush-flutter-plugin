@@ -144,7 +144,7 @@ public class JPushPlugin implements MethodCallHandler {
         JPushInterface.setDebugMode(debug);
 
         JPushInterface.init(registrar.context());     		// 初始化 JPush
-        JCoreInterface.testCountryCode("us");
+//        JCoreInterface.testCountryCode("us");
 
         String channel = (String)map.get("channel");
         JPushInterface.setChannel(registrar.context(), channel);
