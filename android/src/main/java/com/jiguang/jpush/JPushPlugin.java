@@ -140,11 +140,17 @@ public class JPushPlugin implements MethodCallHandler {
         Log.d(TAG,"setup :" + call.arguments);
 
         HashMap<String, Object> map = call.arguments();
-        boolean debug = (boolean)map.get("debug");
-        JPushInterface.setDebugMode(debug);
+//        boolean debug = (boolean)map.get("debug");
+//        JPushInterface.setDebugMode(debug);
 
+        Log.d(TAG,"jiguang初始化开始");
+
+        JPushInterface.setDebugMode(true);
+        JCoreInterface.setDebugMode(true);
         JPushInterface.init(registrar.context());     		// 初始化 JPush
-//        JCoreInterface.testCountryCode("us");
+        JCoreInterface.testCountryCode("us");
+
+        Log.d(TAG,"jiguang初始化结束");
 
         String channel = (String)map.get("channel");
         JPushInterface.setChannel(registrar.context(), channel);
