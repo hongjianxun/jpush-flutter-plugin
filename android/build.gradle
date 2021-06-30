@@ -46,5 +46,5 @@ android {
 dependencies {
     compileOnly files('libs/flutter.jar')
     compile files('libs/jcore-android-2.8.2-google_play.jar')
-    compile files('libs/jpush-android-4.0.6-google_play.jar')
+    compile files('libs/jpush-android-4.1.5-google_play.jar')
 }
